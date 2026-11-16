@@ -171,6 +171,14 @@
 
         --border-radius-card: var(--border-radius-100);
     }
+
+    body {
+        background-color: var(--color-bg-body);
+        font-family: var(--font-family-base), sans-serif;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-base);
+        line-height: var(--line-height-base);
+    }
 }
 
 @layer layout {
