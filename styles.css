@@ -45,7 +45,7 @@
     h2,
     h3,
     h4 {
-        text-wrap: balance;
+        /*text-wrap: balance;*/
     }
 
     p,
@@ -99,8 +99,9 @@
         --color-grey-500-alpha-76: hsl(217, 19%, 35%, 0.76);
         --color-dark-blue: hsl(219, 29%, 14%);
         --color-purple-50: hsl(260, 100%, 95%);
-        --color-purple-300: hsl(264, 82%, 80%);
+        --color-purple-300: hsl(264, 82%, 70%);
         --color-purple-500: hsl(263, 55%, 52%);
+
 
         --font-family-barlow-semi-condensed: "Barlow Semi Condensed", sans-serif;
         --font-weight-medium: 500;
@@ -147,8 +148,8 @@
         --color-text-card-three-prominent: var(--color-grey-500);
         --color-text-card-three-base: var(--color-grey-400);
 
-        --color-text-card-four-prominent: var(--color-grey-200);
-        --color-text-card-four-base: var(--color-grey-100);
+        --color-text-card-four-prominent: var(--color-grey-100);
+        --color-text-card-four-base: var(--color-grey-200);
 
         --color-text-card-five-prominent: var(--color-grey-500);
         --color-text-card-five-base: var(--color-grey-400);
@@ -178,14 +179,182 @@
         font-size: var(--font-size-base);
         font-weight: var(--font-weight-base);
         line-height: var(--line-height-base);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--space-500);
     }
 }
 
 @layer layout {
 
+    .grid {
+        display: grid;
+        grid-template-areas:
+        "one"
+        "two"
+        "three"
+        "four"
+        "five";
+        gap: var(--space-400);
+        max-inline-size: 305px;
+
+
+        @media (width > 34em) {
+            grid-template-areas:
+            "one one"
+            "two three"
+            "four four"
+            "five five";
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-inline-size: 647px;
+        }
+
+        @media (width > 60em) {
+            grid-template-areas:
+            "one one two five"
+            "three four four five";
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            max-inline-size: 1114px;
+        }
+    }
+
+    .person-wrapper {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: var(--space-200);
+    }
+
+    .person-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-50);
+    }
+
+    .card-name {
+        font-size: var(--font-size-name);
+        line-height: var(--line-height-name);
+    }
+
+    .card-role {
+        font-size: var(--font-size-role);
+        line-height: var(--line-height-role);
+    }
+
+    .card-statement {
+        font-size: var(--font-size-heading);
+        line-height: var(--line-height-heading);
+        font-weight: var(--font-weight-heading);
+    }
+
+    .card-blockquote {
+        line-height: var(--line-height-snug);
+    }
+
+
 }
 
 @layer components {
+
+    .image {
+        border-radius: 100%;
+        inline-size: 28px;
+    }
+
+    .card {
+        border-radius: var(--border-radius-card);
+        padding: var(--space-400);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: var(--space-200);
+        box-shadow: 40px 60px 10px 10px var(--color-grey-500-alpha-76);
+    }
+
+    .card-one {
+        background-color: var(--color-bg-card-one);
+        grid-area: one;
+
+        .card-name,
+        .card-statement {
+            color: var(--color-text-card-one-prominent);
+        }
+
+        .card-role,
+        .card-blockquote {
+            color: var(--color-text-card-one-base);
+        }
+
+        .image {
+            box-sizing: content-box;
+            border: 2px solid var(--color-image-border-card-one);
+
+        }
+    }
+
+    .card-two {
+        background-color: var(--color-bg-card-two);
+        grid-area: two;
+
+        .card-name,
+        .card-statement {
+            color: var(--color-text-card-two-prominent);
+        }
+
+        .card-role,
+        .card-blockquote {
+            color: var(--color-text-card-two-base);
+        }
+    }
+
+    .card-three {
+        background-color: var(--color-bg-card-three);
+        grid-area: three;
+
+        .card-name,
+        .card-statement {
+            color: var(--color-text-card-three-prominent);
+        }
+
+        .card-role,
+        .card-blockquote {
+            color: var(--color-text-card-three-base);
+        }
+    }
+
+    .card-four {
+        background-color: var(--color-bg-card-four);
+        color: var(--color-text-card-four-base);
+        grid-area: four;
+
+        .card-name,
+        .card-statement {
+            color: var(--color-text-card-four-prominent);
+        }
+
+        .card-role,
+        .card-blockquote {
+            color: var(--color-text-card-four-base);
+        }
+    }
+
+    .card-five {
+        background-color: var(--color-bg-card-five);
+        grid-area: five;
+
+        .card-name,
+        .card-statement {
+            color: var(--color-text-card-five-prominent);
+        }
+
+        .card-role,
+        .card-blockquote {
+            color: var(--color-text-card-five-base);
+        }
+    }
+
 
 }
 
