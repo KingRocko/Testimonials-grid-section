@@ -13,6 +13,7 @@ improve your coding skills by building realistic projects.
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
     - [Continued development](#continued-development)
+    - [Author](#author)
 
 ## Overview
 
@@ -66,3 +67,7 @@ I'd like to continue improving my CSS Grid and Flexbox skills, especially when i
 I also want to get more confident with choosing breakpoints based on the actual content rather than specific device sizes.
 
 Another area I'd like to focus on is refining my approach to CSS custom properties, making them even more consistent, reusable, and easier to maintain across larger projects.
+
+### Author
+
+Author: King Rocko
